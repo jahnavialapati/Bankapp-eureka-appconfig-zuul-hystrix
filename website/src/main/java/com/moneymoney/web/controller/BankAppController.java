@@ -88,7 +88,8 @@ public class BankAppController {
 		return "FundTransferForm";
 	}
 
-	public String fundtransfernotavailable(@ModelAttribute Transaction transaction, Model model) {
+	public String fundtransfernotavailable(@RequestParam("senderaccountnumber") int senderaccountnumber,
+			@RequestParam("receiveraccountnumber") int receiveraccountnumber, @RequestParam int amount,@ModelAttribute Transaction transaction, Model model) {
 		String messagebody = "service not available";
 		model.addAttribute("message", messagebody);
 		return "FundTransferForm";
